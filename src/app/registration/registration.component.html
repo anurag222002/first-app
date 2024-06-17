@@ -1,0 +1,29 @@
+
+
+<div class="registration-container">
+    <h2>Register</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="username">Username:</label>
+        <input id="username" formControlName="username" type="text">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input id="email" formControlName="email" type="email">
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input id="password" formControlName="password" type="password">
+      </div>
+      <div>
+        <label for="age">Age:</label>
+        <input id="age" formControlName="age" type="number">
+      </div>
+      <div *ngIf="registrationForm.get('age')?.value > 18">
+        <label for="exactAge">Exact Age:</label>
+        <input id="exactAge" formControlName="exactAge" type="number">
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  
